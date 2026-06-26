@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>2026 Summer League Game Player Guide</title>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 24px;
+      background: #f8f9fb;
+      color: #222;
+    }
+    h1 { margin-bottom: 6px; }
+    .note {
+      color: #555;
+      margin-bottom: 20px;
+      line-height: 1.4;
+    }
+    .game-card {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      margin: 0 0 16px 0;
+      overflow: hidden;
+    }
+    .game-header {
+      padding: 14px 16px;
+      border-bottom: 1px solid #e5e5e5;
+      background: #222;
+      color: #fff;
+    }
+    h2 {
+      font-size: 18px;
+      margin: 0 0 4px 0;
+    }
+    .sub {
+      font-size: 13px;
+      color: #ddd;
+    }
+    .teams {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .team-block {
+      padding: 14px 16px;
+      border-right: 1px solid #eee;
+    }
+    .team-block:last-child {
+      border-right: none;
+    }
+    h3 {
+      margin: 0 0 8px 0;
+      font-size: 16px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    li {
+      margin: 6px 0;
+    }
+    .meta {
+      color: #666;
+      font-size: 13px;
+    }
+    @media (max-width: 700px) {
+      .teams {
+        grid-template-columns: 1fr;
+      }
+      .team-block {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+      }
+      .team-block:last-child {
+        border-bottom: none;
+      }
+    }
+  </style>
+</head>
+<body>
+<h1>2026 Summer League Game Player Guide</h1>
+<div class="note">
+    Each game lists the players currently in the scheduler database for each team, with draft pick and draft year.
+    Database updates included: removed Saliou Niang and Narcisse Ngoy; moved Kam Jones to Chicago; moved John Tonje to Boston.
+  </div>
+<div class="filters">
+<div class="filter-group">
+<label for="teamFilter">Team</label>
+<select id="teamFilter" onchange="applyFilters()">
+<option value="">All teams</option>
+<option value="Atlanta Hawks">Atlanta Hawks</option>
+<option value="Boston Celtics">Boston Celtics</option>
+<option value="Brooklyn Nets">Brooklyn Nets</option>
+<option value="Charlotte Hornets">Charlotte Hornets</option>
+<option value="Chicago Bulls">Chicago Bulls</option>
+<option value="Cleveland Cavaliers">Cleveland Cavaliers</option>
+<option value="Dallas Mavericks">Dallas Mavericks</option>
+<option value="Denver Nuggets">Denver Nuggets</option>
+<option value="Detroit Pistons">Detroit Pistons</option>
+<option value="Golden State Warriors">Golden State Warriors</option>
+<option value="Houston Rockets">Houston Rockets</option>
+<option value="Indiana Pacers">Indiana Pacers</option>
+<option value="LA Clippers">LA Clippers</option>
+<option value="Los Angeles Lakers">Los Angeles Lakers</option>
+<option value="Memphis Grizzlies">Memphis Grizzlies</option>
+<option value="Miami Heat">Miami Heat</option>
+<option value="Milwaukee Bucks">Milwaukee Bucks</option>
+<option value="Minnesota Timberwolves">Minnesota Timberwolves</option>
+<option value="New Orleans Pelicans">New Orleans Pelicans</option>
+<option value="New York Knicks">New York Knicks</option>
+<option value="Oklahoma City Thunder">Oklahoma City Thunder</option>
+<option value="Orlando Magic">Orlando Magic</option>
+<option value="Philadelphia 76ers">Philadelphia 76ers</option>
+<option value="Phoenix Suns">Phoenix Suns</option>
+<option value="Portland Trail Blazers">Portland Trail Blazers</option>
+<option value="Sacramento Kings">Sacramento Kings</option>
+<option value="San Antonio Spurs">San Antonio Spurs</option>
+<option value="Toronto Raptors">Toronto Raptors</option>
+<option value="Utah Jazz">Utah Jazz</option>
+<option value="Washington Wizards">Washington Wizards</option>
+</select>
+</div>
+<div class="filter-group">
+<label for="locationFilter">Location</label>
+<select id="locationFilter" onchange="applyFilters()">
+<option value="">All locations</option>
+<option value="Pav">Pav</option>
+<option value="T&amp;M">T&amp;M</option>
+</select>
+</div>
+<div class="filter-group">
+<label for="dateFilter">Date</label>
+<select id="dateFilter" onchange="applyFilters()">
+<option value="">All dates</option>
+<option value="7/10/26">7/10/26</option>
+<option value="7/11/26">7/11/26</option>
+<option value="7/12/26">7/12/26</option>
+<option value="7/13/26">7/13/26</option>
+</select>
+</div>
+<button onclick="resetFilters()">Reset</button>
+<div id="resultCount"></div>
+</div>
+
+<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-team1="Milwaukee Bucks" data-team2="Miami Heat">
+<div class="game-header">
+<div>
+<h2>Game 8: Milwaukee Bucks vs. Miami Heat</h2>
+<div class="sub">Fri 7/10/26 · 1:00 PM PT / 4:00 PM ET · T&amp;M · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Milwaukee Bucks</h3>
+<ul><li>Bogoljub Marković <span class="meta">Pick 47, 2025</span></li><li>Brayden Burries <span class="meta">Pick 10, 2026</span></li><li>Nate Ament <span class="meta">Pick 13, 2026</span></li><li>Malique Lewis <span class="meta">Pick 60, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Miami Heat</h3>
+<ul><li>Kasparas Jakučionis <span class="meta">Pick 20, 2025</span></li><li>Ryan Conwell <span class="meta">Pick 37, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/10/26" data-location="Pav" data-team1="Cleveland Cavaliers" data-team2="Indiana Pacers">
+<div class="game-header">
+<div>
+<h2>Game 9: Cleveland Cavaliers vs. Indiana Pacers</h2>
+<div class="sub">Fri 7/10/26 · 1:30 PM PT / 4:30 PM ET · Pav · ESPN2</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Cleveland Cavaliers</h3>
+<ul><li>Tyrese Proctor <span class="meta">Pick 49, 2025</span></li><li>Meleek Thomas <span class="meta">Pick 34, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Indiana Pacers</h3>
+<ul><li>Braden Smith <span class="meta">Pick 38, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-team1="Brooklyn Nets" data-team2="New York Knicks">
+<div class="game-header">
+<div>
+<h2>Game 10: Brooklyn Nets vs. New York Knicks</h2>
+<div class="sub">Fri 7/10/26 · 3:00 PM PT / 6:00 PM ET · T&amp;M · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Brooklyn Nets</h3>
+<ul><li>Egor Demin <span class="meta">Pick 8, 2025</span></li><li>Nolan Traoré <span class="meta">Pick 19, 2025</span></li><li>Drake Powell <span class="meta">Pick 22, 2025</span></li><li>Ben Saraf <span class="meta">Pick 26, 2025</span></li><li>Danny Wolf <span class="meta">Pick 27, 2025</span></li><li>Mikel Brown Jr. <span class="meta">Pick 6, 2026</span></li><li>Joshua Jefferson <span class="meta">Pick 28, 2026</span></li><li>Tyler Bilodeau <span class="meta">Pick 43, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>New York Knicks</h3>
+<ul><li>Mohamed Diawara <span class="meta">Pick 51, 2025</span></li><li>Jack Kayil <span class="meta">Pick 39, 2026</span></li><li>Tyler Nickel <span class="meta">Pick 47, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/10/26" data-location="Pav" data-team1="Houston Rockets" data-team2="Denver Nuggets">
+<div class="game-header">
+<div>
+<h2>Game 11: Houston Rockets vs. Denver Nuggets</h2>
+<div class="sub">Fri 7/10/26 · 3:30 PM PT / 6:30 PM ET · Pav · ESPN2</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Houston Rockets</h3>
+<ul><li>Bruce Thornton <span class="meta">Pick 31, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Denver Nuggets</h3>
+<ul><li>Trevon Brazile <span class="meta">Pick 35, 2026</span></li><li>Bryce Hopkins <span class="meta">Pick 49, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-team1="Chicago Bulls" data-team2="Memphis Grizzlies">
+<div class="game-header">
+<div>
+<h2>Game 12: Chicago Bulls vs. Memphis Grizzlies</h2>
+<div class="sub">Fri 7/10/26 · 5:00 PM PT / 8:00 PM ET · T&amp;M · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Chicago Bulls</h3>
+<ul><li>Noa Essengue <span class="meta">Pick 12, 2025</span></li><li>Kam Jones <span class="meta">Pick 38, 2025</span></li><li>Lachlan Olbrich <span class="meta">Pick 55, 2025</span></li><li>Caleb Wilson <span class="meta">Pick 4, 2026</span></li><li>Dailyn Swain <span class="meta">Pick 15, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Memphis Grizzlies</h3>
+<ul><li>Cedric Coward <span class="meta">Pick 11, 2025</span></li><li>Javon Small <span class="meta">Pick 48, 2025</span></li><li>Jahmai Mashack <span class="meta">Pick 59, 2025</span></li><li>Cameron Boozer <span class="meta">Pick 3, 2026</span></li><li>Karim López <span class="meta">Pick 21, 2026</span></li><li>Richie Saunders <span class="meta">Pick 32, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/10/26" data-location="Pav" data-team1="Boston Celtics" data-team2="Toronto Raptors">
+<div class="game-header">
+<div>
+<h2>Game 13: Boston Celtics vs. Toronto Raptors</h2>
+<div class="sub">Fri 7/10/26 · 6:00 PM PT / 9:00 PM ET · Pav · ESPN</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Boston Celtics</h3>
+<ul><li>Hugo González <span class="meta">Pick 28, 2025</span></li><li>Amari Williams <span class="meta">Pick 46, 2025</span></li><li>John Tonje <span class="meta">Pick 53, 2025</span></li><li>Max Shulga <span class="meta">Pick 57, 2025</span></li><li>Chris Cenac Jr. <span class="meta">Pick 27, 2026</span></li><li>Dillon Mitchell <span class="meta">Pick 40, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Toronto Raptors</h3>
+<ul><li>Collin Murray-Boyles <span class="meta">Pick 9, 2025</span></li><li>Alijah Martin <span class="meta">Pick 39, 2025</span></li><li>Allen Graves <span class="meta">Pick 19, 2026</span></li><li>Jaden Bradley <span class="meta">Pick 50, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-team1="Oklahoma City Thunder" data-team2="Los Angeles Lakers">
+<div class="game-header">
+<div>
+<h2>Game 14: Oklahoma City Thunder vs. Los Angeles Lakers</h2>
+<div class="sub">Fri 7/10/26 · 7:00 PM PT / 10:00 PM ET · T&amp;M · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Oklahoma City Thunder</h3>
+<ul><li>Aday Mara <span class="meta">Pick 12, 2026</span></li><li>Bennett Stirtz <span class="meta">Pick 16, 2026</span></li><li>Otega Oweh <span class="meta">Pick 41, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Los Angeles Lakers</h3>
+<ul><li>Adou Thiero <span class="meta">Pick 36, 2025</span></li><li>Cameron Carr <span class="meta">Pick 24, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/10/26" data-location="Pav" data-team1="Portland Trail Blazers" data-team2="Phoenix Suns">
+<div class="game-header">
+<div>
+<h2>Game 15: Portland Trail Blazers vs. Phoenix Suns</h2>
+<div class="sub">Fri 7/10/26 · 8:00 PM PT / 11:00 PM ET · Pav · ESPNU</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Portland Trail Blazers</h3>
+<ul><li>Yang Hansen <span class="meta">Pick 16, 2025</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Phoenix Suns</h3>
+<ul><li>Khaman Maluach <span class="meta">Pick 10, 2025</span></li><li>Rasheer Fleming <span class="meta">Pick 31, 2025</span></li><li>Koby Brea <span class="meta">Pick 41, 2025</span></li><li>Koa Peat <span class="meta">Pick 30, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/11/26" data-location="Pav" data-team1="Miami Heat" data-team2="Orlando Magic">
+<div class="game-header">
+<div>
+<h2>Game 16: Miami Heat vs. Orlando Magic</h2>
+<div class="sub">Sat 7/11/26 · 12:30 PM PT / 3:30 PM ET · Pav · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Miami Heat</h3>
+<ul><li>Kasparas Jakučionis <span class="meta">Pick 20, 2025</span></li><li>Ryan Conwell <span class="meta">Pick 37, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Orlando Magic</h3>
+<ul><li>Jase Richardson <span class="meta">Pick 25, 2025</span></li><li>Noah Penda <span class="meta">Pick 32, 2025</span></li><li>Izaiyah Nelson <span class="meta">Pick 51, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-team1="New Orleans Pelicans" data-team2="Charlotte Hornets">
+<div class="game-header">
+<div>
+<h2>Game 17: New Orleans Pelicans vs. Charlotte Hornets</h2>
+<div class="sub">Sat 7/11/26 · 1:00 PM PT / 4:00 PM ET · T&amp;M · ESPN</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>New Orleans Pelicans</h3>
+<ul><li>Jeremiah Fears <span class="meta">Pick 7, 2025</span></li><li>Derik Queen <span class="meta">Pick 13, 2025</span></li><li>Micah Peavy <span class="meta">Pick 40, 2025</span></li><li>Jaron Pierre Jr. <span class="meta">Pick 58, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Charlotte Hornets</h3>
+<ul><li>Kon Knueppel <span class="meta">Pick 4, 2025</span></li><li>Liam McNeeley <span class="meta">Pick 29, 2025</span></li><li>Sion James <span class="meta">Pick 33, 2025</span></li><li>Ryan Kalkbrenner <span class="meta">Pick 34, 2025</span></li><li>Hannes Steinbach <span class="meta">Pick 14, 2026</span></li><li>Christian Anderson <span class="meta">Pick 18, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/11/26" data-location="Pav" data-team1="Indiana Pacers" data-team2="Philadelphia 76ers">
+<div class="game-header">
+<div>
+<h2>Game 18: Indiana Pacers vs. Philadelphia 76ers</h2>
+<div class="sub">Sat 7/11/26 · 2:30 PM PT / 5:30 PM ET · Pav · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Indiana Pacers</h3>
+<ul><li>Braden Smith <span class="meta">Pick 38, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Philadelphia 76ers</h3>
+<ul><li>VJ Edgecombe <span class="meta">Pick 3, 2025</span></li><li>Johni Broome <span class="meta">Pick 35, 2025</span></li><li>Labaron Philon Jr. <span class="meta">Pick 22, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-team1="New York Knicks" data-team2="San Antonio Spurs">
+<div class="game-header">
+<div>
+<h2>Game 19: New York Knicks vs. San Antonio Spurs</h2>
+<div class="sub">Sat 7/11/26 · 3:00 PM PT / 6:00 PM ET · T&amp;M · ESPN</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>New York Knicks</h3>
+<ul><li>Mohamed Diawara <span class="meta">Pick 51, 2025</span></li><li>Jack Kayil <span class="meta">Pick 39, 2026</span></li><li>Tyler Nickel <span class="meta">Pick 47, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>San Antonio Spurs</h3>
+<ul><li>Dylan Harper <span class="meta">Pick 2, 2025</span></li><li>Carter Bryant <span class="meta">Pick 14, 2025</span></li><li>Jayden Quaintance <span class="meta">Pick 20, 2026</span></li><li>Tarris Reed Jr. <span class="meta">Pick 26, 2026</span></li><li>Ja'Kobi Gillespie <span class="meta">Pick 42, 2026</span></li><li>Maliq Brown <span class="meta">Pick 44, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/11/26" data-location="Pav" data-team1="Denver Nuggets" data-team2="Minnesota Timberwolves">
+<div class="game-header">
+<div>
+<h2>Game 20: Denver Nuggets vs. Minnesota Timberwolves</h2>
+<div class="sub">Sat 7/11/26 · 4:30 PM PT / 7:30 PM ET · Pav · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Denver Nuggets</h3>
+<ul><li>Trevon Brazile <span class="meta">Pick 35, 2026</span></li><li>Bryce Hopkins <span class="meta">Pick 49, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Minnesota Timberwolves</h3>
+<ul><li>Joan Beringer <span class="meta">Pick 17, 2025</span></li><li>Rocco Zikarsky <span class="meta">Pick 45, 2025</span></li><li>Isaiah Evans <span class="meta">Pick 33, 2026</span></li><li>Trey Kaufman-Renn <span class="meta">Pick 59, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-team1="Atlanta Hawks" data-team2="Brooklyn Nets">
+<div class="game-header">
+<div>
+<h2>Game 21: Atlanta Hawks vs. Brooklyn Nets</h2>
+<div class="sub">Sat 7/11/26 · 5:00 PM PT / 8:00 PM ET · T&amp;M · ESPN</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Atlanta Hawks</h3>
+<ul><li>Asa Newell <span class="meta">Pick 23, 2025</span></li><li>Kingston Flemings <span class="meta">Pick 8, 2026</span></li><li>Zuby Ejiofor <span class="meta">Pick 23, 2026</span></li><li>Henri Veesaar <span class="meta">Pick 52, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Brooklyn Nets</h3>
+<ul><li>Egor Demin <span class="meta">Pick 8, 2025</span></li><li>Nolan Traoré <span class="meta">Pick 19, 2025</span></li><li>Drake Powell <span class="meta">Pick 22, 2025</span></li><li>Ben Saraf <span class="meta">Pick 26, 2025</span></li><li>Danny Wolf <span class="meta">Pick 27, 2025</span></li><li>Mikel Brown Jr. <span class="meta">Pick 6, 2026</span></li><li>Joshua Jefferson <span class="meta">Pick 28, 2026</span></li><li>Tyler Bilodeau <span class="meta">Pick 43, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/11/26" data-location="Pav" data-team1="Houston Rockets" data-team2="Toronto Raptors">
+<div class="game-header">
+<div>
+<h2>Game 22: Houston Rockets vs. Toronto Raptors</h2>
+<div class="sub">Sat 7/11/26 · 6:30 PM PT / 9:30 PM ET · Pav · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Houston Rockets</h3>
+<ul><li>Bruce Thornton <span class="meta">Pick 31, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Toronto Raptors</h3>
+<ul><li>Collin Murray-Boyles <span class="meta">Pick 9, 2025</span></li><li>Alijah Martin <span class="meta">Pick 39, 2025</span></li><li>Allen Graves <span class="meta">Pick 19, 2026</span></li><li>Jaden Bradley <span class="meta">Pick 50, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-team1="Los Angeles Lakers" data-team2="Dallas Mavericks">
+<div class="game-header">
+<div>
+<h2>Game 23: Los Angeles Lakers vs. Dallas Mavericks</h2>
+<div class="sub">Sat 7/11/26 · 7:00 PM PT / 10:00 PM ET · T&amp;M · ESPN</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Los Angeles Lakers</h3>
+<ul><li>Adou Thiero <span class="meta">Pick 36, 2025</span></li><li>Cameron Carr <span class="meta">Pick 24, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Dallas Mavericks</h3>
+<ul><li>Cooper Flagg <span class="meta">Pick 1, 2025</span></li><li>Morez Johnson Jr. <span class="meta">Pick 9, 2026</span></li><li>Sergio De Larrea <span class="meta">Pick 25, 2026</span></li><li>Tobi Lawal <span class="meta">Pick 48, 2026</span></li><li>Vsevolod Ishchenko <span class="meta">Pick 56, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/12/26" data-location="Pav" data-team1="Phoenix Suns" data-team2="New Orleans Pelicans">
+<div class="game-header">
+<div>
+<h2>Game 24: Phoenix Suns vs. New Orleans Pelicans</h2>
+<div class="sub">Sun 7/12/26 · 12:00 PM PT / 3:00 PM ET · Pav · ESPN2</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Phoenix Suns</h3>
+<ul><li>Khaman Maluach <span class="meta">Pick 10, 2025</span></li><li>Rasheer Fleming <span class="meta">Pick 31, 2025</span></li><li>Koby Brea <span class="meta">Pick 41, 2025</span></li><li>Koa Peat <span class="meta">Pick 30, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>New Orleans Pelicans</h3>
+<ul><li>Jeremiah Fears <span class="meta">Pick 7, 2025</span></li><li>Derik Queen <span class="meta">Pick 13, 2025</span></li><li>Micah Peavy <span class="meta">Pick 40, 2025</span></li><li>Jaron Pierre Jr. <span class="meta">Pick 58, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-team1="Cleveland Cavaliers" data-team2="Detroit Pistons">
+<div class="game-header">
+<div>
+<h2>Game 25: Cleveland Cavaliers vs. Detroit Pistons</h2>
+<div class="sub">Sun 7/12/26 · 1:00 PM PT / 4:00 PM ET · T&amp;M · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Cleveland Cavaliers</h3>
+<ul><li>Tyrese Proctor <span class="meta">Pick 49, 2025</span></li><li>Meleek Thomas <span class="meta">Pick 34, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Detroit Pistons</h3>
+<ul><li>Chaz Lanier <span class="meta">Pick 37, 2025</span></li><li>Ebuka Okorie <span class="meta">Pick 17, 2026</span></li><li>Ugonna Onyenso <span class="meta">Pick 53, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/12/26" data-location="Pav" data-team1="Charlotte Hornets" data-team2="Boston Celtics">
+<div class="game-header">
+<div>
+<h2>Game 26: Charlotte Hornets vs. Boston Celtics</h2>
+<div class="sub">Sun 7/12/26 · 2:00 PM PT / 5:00 PM ET · Pav · ESPN2</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Charlotte Hornets</h3>
+<ul><li>Kon Knueppel <span class="meta">Pick 4, 2025</span></li><li>Liam McNeeley <span class="meta">Pick 29, 2025</span></li><li>Sion James <span class="meta">Pick 33, 2025</span></li><li>Ryan Kalkbrenner <span class="meta">Pick 34, 2025</span></li><li>Hannes Steinbach <span class="meta">Pick 14, 2026</span></li><li>Christian Anderson <span class="meta">Pick 18, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Boston Celtics</h3>
+<ul><li>Hugo González <span class="meta">Pick 28, 2025</span></li><li>Amari Williams <span class="meta">Pick 46, 2025</span></li><li>John Tonje <span class="meta">Pick 53, 2025</span></li><li>Max Shulga <span class="meta">Pick 57, 2025</span></li><li>Chris Cenac Jr. <span class="meta">Pick 27, 2026</span></li><li>Dillon Mitchell <span class="meta">Pick 40, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-team1="Oklahoma City Thunder" data-team2="Golden State Warriors">
+<div class="game-header">
+<div>
+<h2>Game 27: Oklahoma City Thunder vs. Golden State Warriors</h2>
+<div class="sub">Sun 7/12/26 · 3:00 PM PT / 6:00 PM ET · T&amp;M · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Oklahoma City Thunder</h3>
+<ul><li>Aday Mara <span class="meta">Pick 12, 2026</span></li><li>Bennett Stirtz <span class="meta">Pick 16, 2026</span></li><li>Otega Oweh <span class="meta">Pick 41, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Golden State Warriors</h3>
+<ul><li>Alex Toohey <span class="meta">Pick 52, 2025</span></li><li>Will Richard <span class="meta">Pick 56, 2025</span></li><li>Yaxel Lendeborg <span class="meta">Pick 11, 2026</span></li><li>Lajae Jones <span class="meta">Pick 54, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/12/26" data-location="Pav" data-team1="Orlando Magic" data-team2="Portland Trail Blazers">
+<div class="game-header">
+<div>
+<h2>Game 28: Orlando Magic vs. Portland Trail Blazers</h2>
+<div class="sub">Sun 7/12/26 · 4:00 PM PT / 7:00 PM ET · Pav · ESPNU</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Orlando Magic</h3>
+<ul><li>Jase Richardson <span class="meta">Pick 25, 2025</span></li><li>Noah Penda <span class="meta">Pick 32, 2025</span></li><li>Izaiyah Nelson <span class="meta">Pick 51, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Portland Trail Blazers</h3>
+<ul><li>Yang Hansen <span class="meta">Pick 16, 2025</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-team1="Sacramento Kings" data-team2="Washington Wizards">
+<div class="game-header">
+<div>
+<h2>Game 29: Sacramento Kings vs. Washington Wizards</h2>
+<div class="sub">Sun 7/12/26 · 5:00 PM PT / 8:00 PM ET · T&amp;M · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Sacramento Kings</h3>
+<ul><li>Nique Clifford <span class="meta">Pick 24, 2025</span></li><li>Maxime Raynaud <span class="meta">Pick 42, 2025</span></li><li>Darius Acuff Jr. <span class="meta">Pick 7, 2026</span></li><li>Alex Karaban <span class="meta">Pick 29, 2026</span></li><li>Emanuel Sharp <span class="meta">Pick 45, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Washington Wizards</h3>
+<ul><li>Tre Johnson <span class="meta">Pick 6, 2025</span></li><li>Will Riley <span class="meta">Pick 21, 2025</span></li><li>Jamir Watkins <span class="meta">Pick 43, 2025</span></li><li>AJ Dybantsa <span class="meta">Pick 1, 2026</span></li><li>Felix Okpara <span class="meta">Pick 46, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/12/26" data-location="Pav" data-team1="San Antonio Spurs" data-team2="Milwaukee Bucks">
+<div class="game-header">
+<div>
+<h2>Game 30: San Antonio Spurs vs. Milwaukee Bucks</h2>
+<div class="sub">Sun 7/12/26 · 6:00 PM PT / 9:00 PM ET · Pav · ESPN</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>San Antonio Spurs</h3>
+<ul><li>Dylan Harper <span class="meta">Pick 2, 2025</span></li><li>Carter Bryant <span class="meta">Pick 14, 2025</span></li><li>Jayden Quaintance <span class="meta">Pick 20, 2026</span></li><li>Tarris Reed Jr. <span class="meta">Pick 26, 2026</span></li><li>Ja'Kobi Gillespie <span class="meta">Pick 42, 2026</span></li><li>Maliq Brown <span class="meta">Pick 44, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Milwaukee Bucks</h3>
+<ul><li>Bogoljub Marković <span class="meta">Pick 47, 2025</span></li><li>Brayden Burries <span class="meta">Pick 10, 2026</span></li><li>Nate Ament <span class="meta">Pick 13, 2026</span></li><li>Malique Lewis <span class="meta">Pick 60, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-team1="LA Clippers" data-team2="Utah Jazz">
+<div class="game-header">
+<div>
+<h2>Game 31: LA Clippers vs. Utah Jazz</h2>
+<div class="sub">Sun 7/12/26 · 7:00 PM PT / 10:00 PM ET · T&amp;M · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>LA Clippers</h3>
+<ul><li>Yanic Konan Niederhauser <span class="meta">Pick 30, 2025</span></li><li>Kobe Sanders <span class="meta">Pick 50, 2025</span></li><li>Keaton Wagler <span class="meta">Pick 5, 2026</span></li><li>Baba Miller <span class="meta">Pick 36, 2026</span></li><li>Nick Martinelli <span class="meta">Pick 55, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Utah Jazz</h3>
+<ul><li>Ace Bailey <span class="meta">Pick 5, 2025</span></li><li>Walter Clayton Jr. <span class="meta">Pick 18, 2025</span></li><li>Darryn Peterson <span class="meta">Pick 2, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/13/26" data-location="Pav" data-team1="Detroit Pistons" data-team2="New York Knicks">
+<div class="game-header">
+<div>
+<h2>Game 32: Detroit Pistons vs. New York Knicks</h2>
+<div class="sub">Mon 7/13/26 · 1:00 PM PT / 4:00 PM ET · Pav · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Detroit Pistons</h3>
+<ul><li>Chaz Lanier <span class="meta">Pick 37, 2025</span></li><li>Ebuka Okorie <span class="meta">Pick 17, 2026</span></li><li>Ugonna Onyenso <span class="meta">Pick 53, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>New York Knicks</h3>
+<ul><li>Mohamed Diawara <span class="meta">Pick 51, 2025</span></li><li>Jack Kayil <span class="meta">Pick 39, 2026</span></li><li>Tyler Nickel <span class="meta">Pick 47, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-team1="Toronto Raptors" data-team2="Indiana Pacers">
+<div class="game-header">
+<div>
+<h2>Game 33: Toronto Raptors vs. Indiana Pacers</h2>
+<div class="sub">Mon 7/13/26 · 1:30 PM PT / 4:30 PM ET · T&amp;M · ESPN2</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Toronto Raptors</h3>
+<ul><li>Collin Murray-Boyles <span class="meta">Pick 9, 2025</span></li><li>Alijah Martin <span class="meta">Pick 39, 2025</span></li><li>Allen Graves <span class="meta">Pick 19, 2026</span></li><li>Jaden Bradley <span class="meta">Pick 50, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Indiana Pacers</h3>
+<ul><li>Braden Smith <span class="meta">Pick 38, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/13/26" data-location="Pav" data-team1="Atlanta Hawks" data-team2="Boston Celtics">
+<div class="game-header">
+<div>
+<h2>Game 34: Atlanta Hawks vs. Boston Celtics</h2>
+<div class="sub">Mon 7/13/26 · 3:00 PM PT / 6:00 PM ET · Pav · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Atlanta Hawks</h3>
+<ul><li>Asa Newell <span class="meta">Pick 23, 2025</span></li><li>Kingston Flemings <span class="meta">Pick 8, 2026</span></li><li>Zuby Ejiofor <span class="meta">Pick 23, 2026</span></li><li>Henri Veesaar <span class="meta">Pick 52, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Boston Celtics</h3>
+<ul><li>Hugo González <span class="meta">Pick 28, 2025</span></li><li>Amari Williams <span class="meta">Pick 46, 2025</span></li><li>John Tonje <span class="meta">Pick 53, 2025</span></li><li>Max Shulga <span class="meta">Pick 57, 2025</span></li><li>Chris Cenac Jr. <span class="meta">Pick 27, 2026</span></li><li>Dillon Mitchell <span class="meta">Pick 40, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-team1="Dallas Mavericks" data-team2="Memphis Grizzlies">
+<div class="game-header">
+<div>
+<h2>Game 35: Dallas Mavericks vs. Memphis Grizzlies</h2>
+<div class="sub">Mon 7/13/26 · 4:00 PM PT / 7:00 PM ET · T&amp;M · ESPN</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Dallas Mavericks</h3>
+<ul><li>Cooper Flagg <span class="meta">Pick 1, 2025</span></li><li>Morez Johnson Jr. <span class="meta">Pick 9, 2026</span></li><li>Sergio De Larrea <span class="meta">Pick 25, 2026</span></li><li>Tobi Lawal <span class="meta">Pick 48, 2026</span></li><li>Vsevolod Ishchenko <span class="meta">Pick 56, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Memphis Grizzlies</h3>
+<ul><li>Cedric Coward <span class="meta">Pick 11, 2025</span></li><li>Javon Small <span class="meta">Pick 48, 2025</span></li><li>Jahmai Mashack <span class="meta">Pick 59, 2025</span></li><li>Cameron Boozer <span class="meta">Pick 3, 2026</span></li><li>Karim López <span class="meta">Pick 21, 2026</span></li><li>Richie Saunders <span class="meta">Pick 32, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/13/26" data-location="Pav" data-team1="Miami Heat" data-team2="Cleveland Cavaliers">
+<div class="game-header">
+<div>
+<h2>Game 36: Miami Heat vs. Cleveland Cavaliers</h2>
+<div class="sub">Mon 7/13/26 · 5:00 PM PT / 8:00 PM ET · Pav · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Miami Heat</h3>
+<ul><li>Kasparas Jakučionis <span class="meta">Pick 20, 2025</span></li><li>Ryan Conwell <span class="meta">Pick 37, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Cleveland Cavaliers</h3>
+<ul><li>Tyrese Proctor <span class="meta">Pick 49, 2025</span></li><li>Meleek Thomas <span class="meta">Pick 34, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-team1="Chicago Bulls" data-team2="Utah Jazz">
+<div class="game-header">
+<div>
+<h2>Game 37: Chicago Bulls vs. Utah Jazz</h2>
+<div class="sub">Mon 7/13/26 · 6:00 PM PT / 9:00 PM ET · T&amp;M · ESPN</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Chicago Bulls</h3>
+<ul><li>Noa Essengue <span class="meta">Pick 12, 2025</span></li><li>Kam Jones <span class="meta">Pick 38, 2025</span></li><li>Lachlan Olbrich <span class="meta">Pick 55, 2025</span></li><li>Caleb Wilson <span class="meta">Pick 4, 2026</span></li><li>Dailyn Swain <span class="meta">Pick 15, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Utah Jazz</h3>
+<ul><li>Ace Bailey <span class="meta">Pick 5, 2025</span></li><li>Walter Clayton Jr. <span class="meta">Pick 18, 2025</span></li><li>Darryn Peterson <span class="meta">Pick 2, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/13/26" data-location="Pav" data-team1="Phoenix Suns" data-team2="Milwaukee Bucks">
+<div class="game-header">
+<div>
+<h2>Game 38: Phoenix Suns vs. Milwaukee Bucks</h2>
+<div class="sub">Mon 7/13/26 · 7:00 PM PT / 10:00 PM ET · Pav · Prime</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Phoenix Suns</h3>
+<ul><li>Khaman Maluach <span class="meta">Pick 10, 2025</span></li><li>Rasheer Fleming <span class="meta">Pick 31, 2025</span></li><li>Koby Brea <span class="meta">Pick 41, 2025</span></li><li>Koa Peat <span class="meta">Pick 30, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Milwaukee Bucks</h3>
+<ul><li>Bogoljub Marković <span class="meta">Pick 47, 2025</span></li><li>Brayden Burries <span class="meta">Pick 10, 2026</span></li><li>Nate Ament <span class="meta">Pick 13, 2026</span></li><li>Malique Lewis <span class="meta">Pick 60, 2026</span></li></ul>
+</div>
+</div>
+</section>
+<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-team1="Minnesota Timberwolves" data-team2="Portland Trail Blazers">
+<div class="game-header">
+<div>
+<h2>Game 39: Minnesota Timberwolves vs. Portland Trail Blazers</h2>
+<div class="sub">Mon 7/13/26 · 8:00 PM PT / 11:00 PM ET · T&amp;M · ESPN2</div>
+</div>
+</div>
+<div class="teams">
+<div class="team-block">
+<h3>Minnesota Timberwolves</h3>
+<ul><li>Joan Beringer <span class="meta">Pick 17, 2025</span></li><li>Rocco Zikarsky <span class="meta">Pick 45, 2025</span></li><li>Isaiah Evans <span class="meta">Pick 33, 2026</span></li><li>Trey Kaufman-Renn <span class="meta">Pick 59, 2026</span></li></ul>
+</div>
+<div class="team-block">
+<h3>Portland Trail Blazers</h3>
+<ul><li>Yang Hansen <span class="meta">Pick 16, 2025</span></li></ul>
+</div>
+</div>
+</section>
+<script>
+    function applyFilters() {
+      const team = document.getElementById("teamFilter").value;
+      const location = document.getElementById("locationFilter").value;
+      const date = document.getElementById("dateFilter").value;
+      const cards = Array.from(document.querySelectorAll(".game-card"));
+      let visibleCount = 0;
+
+      cards.forEach(card => {
+        const teamMatch = !team || card.dataset.team1 === team || card.dataset.team2 === team;
+        const locationMatch = !location || card.dataset.location === location;
+        const dateMatch = !date || card.dataset.date === date;
+
+        const show = teamMatch && locationMatch && dateMatch;
+        card.style.display = show ? "" : "none";
+        if (show) visibleCount += 1;
+      });
+
+      document.getElementById("resultCount").textContent =
+        visibleCount + " game" + (visibleCount === 1 ? "" : "s") + " shown";
+    }
+
+    function resetFilters() {
+      document.getElementById("teamFilter").value = "";
+      document.getElementById("locationFilter").value = "";
+      document.getElementById("dateFilter").value = "";
+      applyFilters();
+    }
+
+    applyFilters();
+</script></body>
+</html>
