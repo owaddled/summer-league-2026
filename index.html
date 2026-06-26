@@ -84,6 +84,7 @@
 <h1>2026 Summer League Game Player Guide</h1>
 <div class="note">
     Each game lists the players currently in the scheduler database for each team, with draft pick and draft year.
+    Database updates included: removed Saliou Niang and Narcisse Ngoy; moved Kam Jones to Chicago; moved John Tonje to Boston.
   </div>
 <div class="filters">
 <div class="filter-group">
@@ -123,6 +124,11 @@
 </select>
 </div>
 <div class="filter-group">
+<label for="playerSearch">Player Search</label>
+<input id="playerSearch" oninput="applyFilters()" placeholder="Search player..." type="text"/>
+</div>
+
+<div class="filter-group">
 <label for="locationFilter">Location</label>
 <select id="locationFilter" onchange="applyFilters()">
 <option value="">All locations</option>
@@ -143,8 +149,7 @@
 <button onclick="resetFilters()">Reset</button>
 <div id="resultCount"></div>
 </div>
-
-<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-team1="Milwaukee Bucks" data-team2="Miami Heat">
+<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-players="bogoljub marković brayden burries nate ament malique lewis kasparas jakučionis ryan conwell" data-team1="Milwaukee Bucks" data-team2="Miami Heat">
 <div class="game-header">
 <div>
 <h2>Game 8: Milwaukee Bucks vs. Miami Heat</h2>
@@ -162,7 +167,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/10/26" data-location="Pav" data-team1="Cleveland Cavaliers" data-team2="Indiana Pacers">
+<section class="game-card" data-date="7/10/26" data-location="Pav" data-players="tyrese proctor meleek thomas braden smith" data-team1="Cleveland Cavaliers" data-team2="Indiana Pacers">
 <div class="game-header">
 <div>
 <h2>Game 9: Cleveland Cavaliers vs. Indiana Pacers</h2>
@@ -180,7 +185,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-team1="Brooklyn Nets" data-team2="New York Knicks">
+<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-players="egor demin nolan traoré drake powell ben saraf danny wolf mikel brown jr. joshua jefferson tyler bilodeau mohamed diawara jack kayil tyler nickel" data-team1="Brooklyn Nets" data-team2="New York Knicks">
 <div class="game-header">
 <div>
 <h2>Game 10: Brooklyn Nets vs. New York Knicks</h2>
@@ -198,7 +203,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/10/26" data-location="Pav" data-team1="Houston Rockets" data-team2="Denver Nuggets">
+<section class="game-card" data-date="7/10/26" data-location="Pav" data-players="bruce thornton trevon brazile bryce hopkins" data-team1="Houston Rockets" data-team2="Denver Nuggets">
 <div class="game-header">
 <div>
 <h2>Game 11: Houston Rockets vs. Denver Nuggets</h2>
@@ -216,7 +221,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-team1="Chicago Bulls" data-team2="Memphis Grizzlies">
+<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-players="noa essengue kam jones lachlan olbrich caleb wilson dailyn swain cedric coward javon small jahmai mashack cameron boozer karim lópez richie saunders" data-team1="Chicago Bulls" data-team2="Memphis Grizzlies">
 <div class="game-header">
 <div>
 <h2>Game 12: Chicago Bulls vs. Memphis Grizzlies</h2>
@@ -234,7 +239,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/10/26" data-location="Pav" data-team1="Boston Celtics" data-team2="Toronto Raptors">
+<section class="game-card" data-date="7/10/26" data-location="Pav" data-players="hugo gonzález amari williams john tonje max shulga chris cenac jr. dillon mitchell collin murray-boyles alijah martin allen graves jaden bradley" data-team1="Boston Celtics" data-team2="Toronto Raptors">
 <div class="game-header">
 <div>
 <h2>Game 13: Boston Celtics vs. Toronto Raptors</h2>
@@ -252,7 +257,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-team1="Oklahoma City Thunder" data-team2="Los Angeles Lakers">
+<section class="game-card" data-date="7/10/26" data-location="T&amp;M" data-players="aday mara bennett stirtz otega oweh adou thiero cameron carr" data-team1="Oklahoma City Thunder" data-team2="Los Angeles Lakers">
 <div class="game-header">
 <div>
 <h2>Game 14: Oklahoma City Thunder vs. Los Angeles Lakers</h2>
@@ -270,7 +275,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/10/26" data-location="Pav" data-team1="Portland Trail Blazers" data-team2="Phoenix Suns">
+<section class="game-card" data-date="7/10/26" data-location="Pav" data-players="yang hansen khaman maluach rasheer fleming koby brea koa peat" data-team1="Portland Trail Blazers" data-team2="Phoenix Suns">
 <div class="game-header">
 <div>
 <h2>Game 15: Portland Trail Blazers vs. Phoenix Suns</h2>
@@ -288,7 +293,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/11/26" data-location="Pav" data-team1="Miami Heat" data-team2="Orlando Magic">
+<section class="game-card" data-date="7/11/26" data-location="Pav" data-players="kasparas jakučionis ryan conwell jase richardson noah penda izaiyah nelson" data-team1="Miami Heat" data-team2="Orlando Magic">
 <div class="game-header">
 <div>
 <h2>Game 16: Miami Heat vs. Orlando Magic</h2>
@@ -306,7 +311,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-team1="New Orleans Pelicans" data-team2="Charlotte Hornets">
+<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-players="jeremiah fears derik queen micah peavy jaron pierre jr. kon knueppel liam mcneeley sion james ryan kalkbrenner hannes steinbach christian anderson" data-team1="New Orleans Pelicans" data-team2="Charlotte Hornets">
 <div class="game-header">
 <div>
 <h2>Game 17: New Orleans Pelicans vs. Charlotte Hornets</h2>
@@ -324,7 +329,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/11/26" data-location="Pav" data-team1="Indiana Pacers" data-team2="Philadelphia 76ers">
+<section class="game-card" data-date="7/11/26" data-location="Pav" data-players="braden smith vj edgecombe johni broome labaron philon jr." data-team1="Indiana Pacers" data-team2="Philadelphia 76ers">
 <div class="game-header">
 <div>
 <h2>Game 18: Indiana Pacers vs. Philadelphia 76ers</h2>
@@ -342,7 +347,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-team1="New York Knicks" data-team2="San Antonio Spurs">
+<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-players="mohamed diawara jack kayil tyler nickel dylan harper carter bryant jayden quaintance tarris reed jr. ja'kobi gillespie maliq brown" data-team1="New York Knicks" data-team2="San Antonio Spurs">
 <div class="game-header">
 <div>
 <h2>Game 19: New York Knicks vs. San Antonio Spurs</h2>
@@ -360,7 +365,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/11/26" data-location="Pav" data-team1="Denver Nuggets" data-team2="Minnesota Timberwolves">
+<section class="game-card" data-date="7/11/26" data-location="Pav" data-players="trevon brazile bryce hopkins joan beringer rocco zikarsky isaiah evans trey kaufman-renn" data-team1="Denver Nuggets" data-team2="Minnesota Timberwolves">
 <div class="game-header">
 <div>
 <h2>Game 20: Denver Nuggets vs. Minnesota Timberwolves</h2>
@@ -378,7 +383,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-team1="Atlanta Hawks" data-team2="Brooklyn Nets">
+<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-players="asa newell kingston flemings zuby ejiofor henri veesaar egor demin nolan traoré drake powell ben saraf danny wolf mikel brown jr. joshua jefferson tyler bilodeau" data-team1="Atlanta Hawks" data-team2="Brooklyn Nets">
 <div class="game-header">
 <div>
 <h2>Game 21: Atlanta Hawks vs. Brooklyn Nets</h2>
@@ -396,7 +401,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/11/26" data-location="Pav" data-team1="Houston Rockets" data-team2="Toronto Raptors">
+<section class="game-card" data-date="7/11/26" data-location="Pav" data-players="bruce thornton collin murray-boyles alijah martin allen graves jaden bradley" data-team1="Houston Rockets" data-team2="Toronto Raptors">
 <div class="game-header">
 <div>
 <h2>Game 22: Houston Rockets vs. Toronto Raptors</h2>
@@ -414,7 +419,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-team1="Los Angeles Lakers" data-team2="Dallas Mavericks">
+<section class="game-card" data-date="7/11/26" data-location="T&amp;M" data-players="adou thiero cameron carr cooper flagg morez johnson jr. sergio de larrea tobi lawal vsevolod ishchenko" data-team1="Los Angeles Lakers" data-team2="Dallas Mavericks">
 <div class="game-header">
 <div>
 <h2>Game 23: Los Angeles Lakers vs. Dallas Mavericks</h2>
@@ -432,7 +437,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/12/26" data-location="Pav" data-team1="Phoenix Suns" data-team2="New Orleans Pelicans">
+<section class="game-card" data-date="7/12/26" data-location="Pav" data-players="khaman maluach rasheer fleming koby brea koa peat jeremiah fears derik queen micah peavy jaron pierre jr." data-team1="Phoenix Suns" data-team2="New Orleans Pelicans">
 <div class="game-header">
 <div>
 <h2>Game 24: Phoenix Suns vs. New Orleans Pelicans</h2>
@@ -450,7 +455,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-team1="Cleveland Cavaliers" data-team2="Detroit Pistons">
+<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-players="tyrese proctor meleek thomas chaz lanier ebuka okorie ugonna onyenso" data-team1="Cleveland Cavaliers" data-team2="Detroit Pistons">
 <div class="game-header">
 <div>
 <h2>Game 25: Cleveland Cavaliers vs. Detroit Pistons</h2>
@@ -468,7 +473,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/12/26" data-location="Pav" data-team1="Charlotte Hornets" data-team2="Boston Celtics">
+<section class="game-card" data-date="7/12/26" data-location="Pav" data-players="kon knueppel liam mcneeley sion james ryan kalkbrenner hannes steinbach christian anderson hugo gonzález amari williams john tonje max shulga chris cenac jr. dillon mitchell" data-team1="Charlotte Hornets" data-team2="Boston Celtics">
 <div class="game-header">
 <div>
 <h2>Game 26: Charlotte Hornets vs. Boston Celtics</h2>
@@ -486,7 +491,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-team1="Oklahoma City Thunder" data-team2="Golden State Warriors">
+<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-players="aday mara bennett stirtz otega oweh alex toohey will richard yaxel lendeborg lajae jones" data-team1="Oklahoma City Thunder" data-team2="Golden State Warriors">
 <div class="game-header">
 <div>
 <h2>Game 27: Oklahoma City Thunder vs. Golden State Warriors</h2>
@@ -504,7 +509,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/12/26" data-location="Pav" data-team1="Orlando Magic" data-team2="Portland Trail Blazers">
+<section class="game-card" data-date="7/12/26" data-location="Pav" data-players="jase richardson noah penda izaiyah nelson yang hansen" data-team1="Orlando Magic" data-team2="Portland Trail Blazers">
 <div class="game-header">
 <div>
 <h2>Game 28: Orlando Magic vs. Portland Trail Blazers</h2>
@@ -522,7 +527,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-team1="Sacramento Kings" data-team2="Washington Wizards">
+<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-players="nique clifford maxime raynaud darius acuff jr. alex karaban emanuel sharp tre johnson will riley jamir watkins aj dybantsa felix okpara" data-team1="Sacramento Kings" data-team2="Washington Wizards">
 <div class="game-header">
 <div>
 <h2>Game 29: Sacramento Kings vs. Washington Wizards</h2>
@@ -540,7 +545,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/12/26" data-location="Pav" data-team1="San Antonio Spurs" data-team2="Milwaukee Bucks">
+<section class="game-card" data-date="7/12/26" data-location="Pav" data-players="dylan harper carter bryant jayden quaintance tarris reed jr. ja'kobi gillespie maliq brown bogoljub marković brayden burries nate ament malique lewis" data-team1="San Antonio Spurs" data-team2="Milwaukee Bucks">
 <div class="game-header">
 <div>
 <h2>Game 30: San Antonio Spurs vs. Milwaukee Bucks</h2>
@@ -558,7 +563,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-team1="LA Clippers" data-team2="Utah Jazz">
+<section class="game-card" data-date="7/12/26" data-location="T&amp;M" data-players="yanic konan niederhauser kobe sanders keaton wagler baba miller nick martinelli ace bailey walter clayton jr. darryn peterson" data-team1="LA Clippers" data-team2="Utah Jazz">
 <div class="game-header">
 <div>
 <h2>Game 31: LA Clippers vs. Utah Jazz</h2>
@@ -576,7 +581,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/13/26" data-location="Pav" data-team1="Detroit Pistons" data-team2="New York Knicks">
+<section class="game-card" data-date="7/13/26" data-location="Pav" data-players="chaz lanier ebuka okorie ugonna onyenso mohamed diawara jack kayil tyler nickel" data-team1="Detroit Pistons" data-team2="New York Knicks">
 <div class="game-header">
 <div>
 <h2>Game 32: Detroit Pistons vs. New York Knicks</h2>
@@ -594,7 +599,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-team1="Toronto Raptors" data-team2="Indiana Pacers">
+<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-players="collin murray-boyles alijah martin allen graves jaden bradley braden smith" data-team1="Toronto Raptors" data-team2="Indiana Pacers">
 <div class="game-header">
 <div>
 <h2>Game 33: Toronto Raptors vs. Indiana Pacers</h2>
@@ -612,7 +617,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/13/26" data-location="Pav" data-team1="Atlanta Hawks" data-team2="Boston Celtics">
+<section class="game-card" data-date="7/13/26" data-location="Pav" data-players="asa newell kingston flemings zuby ejiofor henri veesaar hugo gonzález amari williams john tonje max shulga chris cenac jr. dillon mitchell" data-team1="Atlanta Hawks" data-team2="Boston Celtics">
 <div class="game-header">
 <div>
 <h2>Game 34: Atlanta Hawks vs. Boston Celtics</h2>
@@ -630,7 +635,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-team1="Dallas Mavericks" data-team2="Memphis Grizzlies">
+<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-players="cooper flagg morez johnson jr. sergio de larrea tobi lawal vsevolod ishchenko cedric coward javon small jahmai mashack cameron boozer karim lópez richie saunders" data-team1="Dallas Mavericks" data-team2="Memphis Grizzlies">
 <div class="game-header">
 <div>
 <h2>Game 35: Dallas Mavericks vs. Memphis Grizzlies</h2>
@@ -648,7 +653,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/13/26" data-location="Pav" data-team1="Miami Heat" data-team2="Cleveland Cavaliers">
+<section class="game-card" data-date="7/13/26" data-location="Pav" data-players="kasparas jakučionis ryan conwell tyrese proctor meleek thomas" data-team1="Miami Heat" data-team2="Cleveland Cavaliers">
 <div class="game-header">
 <div>
 <h2>Game 36: Miami Heat vs. Cleveland Cavaliers</h2>
@@ -666,7 +671,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-team1="Chicago Bulls" data-team2="Utah Jazz">
+<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-players="noa essengue kam jones lachlan olbrich caleb wilson dailyn swain ace bailey walter clayton jr. darryn peterson" data-team1="Chicago Bulls" data-team2="Utah Jazz">
 <div class="game-header">
 <div>
 <h2>Game 37: Chicago Bulls vs. Utah Jazz</h2>
@@ -684,7 +689,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/13/26" data-location="Pav" data-team1="Phoenix Suns" data-team2="Milwaukee Bucks">
+<section class="game-card" data-date="7/13/26" data-location="Pav" data-players="khaman maluach rasheer fleming koby brea koa peat bogoljub marković brayden burries nate ament malique lewis" data-team1="Phoenix Suns" data-team2="Milwaukee Bucks">
 <div class="game-header">
 <div>
 <h2>Game 38: Phoenix Suns vs. Milwaukee Bucks</h2>
@@ -702,7 +707,7 @@
 </div>
 </div>
 </section>
-<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-team1="Minnesota Timberwolves" data-team2="Portland Trail Blazers">
+<section class="game-card" data-date="7/13/26" data-location="T&amp;M" data-players="joan beringer rocco zikarsky isaiah evans trey kaufman-renn yang hansen" data-team1="Minnesota Timberwolves" data-team2="Portland Trail Blazers">
 <div class="game-header">
 <div>
 <h2>Game 39: Minnesota Timberwolves vs. Portland Trail Blazers</h2>
@@ -725,6 +730,7 @@
       const team = document.getElementById("teamFilter").value;
       const location = document.getElementById("locationFilter").value;
       const date = document.getElementById("dateFilter").value;
+      const playerSearch = document.getElementById("playerSearch").value.trim().toLowerCase();
       const cards = Array.from(document.querySelectorAll(".game-card"));
       let visibleCount = 0;
 
@@ -732,8 +738,9 @@
         const teamMatch = !team || card.dataset.team1 === team || card.dataset.team2 === team;
         const locationMatch = !location || card.dataset.location === location;
         const dateMatch = !date || card.dataset.date === date;
+        const playerMatch = !playerSearch || card.dataset.players.includes(playerSearch);
 
-        const show = teamMatch && locationMatch && dateMatch;
+        const show = teamMatch && locationMatch && dateMatch && playerMatch;
         card.style.display = show ? "" : "none";
         if (show) visibleCount += 1;
       });
@@ -746,6 +753,7 @@
       document.getElementById("teamFilter").value = "";
       document.getElementById("locationFilter").value = "";
       document.getElementById("dateFilter").value = "";
+      document.getElementById("playerSearch").value = "";
       applyFilters();
     }
 
