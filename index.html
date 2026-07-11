@@ -198,7 +198,7 @@ mark {
 </head>
 <body>
 <h1>2026 Summer League Game Player Guide</h1>
-<div class="note">Each game loads its team rosters from the roster JSON file. Affiliations and school qualifiers appear as plain text; contract, status, and draft details remain highlighted.</div>
+<div class="note">Each game loads its team rosters from the roster JSON file. School qualifiers, countries, and leagues display as plain affiliation text; only contract, status, and draft details are highlighted.</div>
 <div class="filters">
 <div class="filter-group">
 <label for="teamFilter">Team</label>
@@ -1063,24 +1063,29 @@ function normalizeTeamName(name) {
 
 function playerMetaHtml(player) {
   const parts = [];
+  const plainQualifiers = new Set(["FL", "OH"]);
+  const statuses = Array.isArray(player.status) ? player.status : [];
+  const affiliationQualifiers = statuses.filter(status => plainQualifiers.has(status));
+  const pillStatuses = statuses.filter(status => !plainQualifiers.has(status));
 
-  if (player.affiliation) {
-    parts.push(`<span class="affiliation">${escapeHtml(player.affiliation)}</span>`);
+  let affiliationText = player.affiliation || "";
+  if (affiliationQualifiers.length) {
+    affiliationText += ` (${affiliationQualifiers.map(escapeHtml).join(", ")})`;
   }
-
   if (player.league) {
-    parts.push(`<span class="affiliation">(${escapeHtml(player.league)})</span>`);
+    affiliationText += ` (${escapeHtml(player.league)})`;
+  }
+  if (affiliationText) {
+    parts.push(`<span class="affiliation">${affiliationText}</span>`);
   }
 
   if (player.contract) {
     parts.push(`<span class="contract-pill">${escapeHtml(player.contract)}</span>`);
   }
 
-  if (Array.isArray(player.status)) {
-    player.status.forEach(status => {
-      parts.push(`<span class="status-pill">${escapeHtml(status)}</span>`);
-    });
-  }
+  pillStatuses.forEach(status => {
+    parts.push(`<span class="status-pill">${escapeHtml(status)}</span>`);
+  });
 
   if (player.draft) {
     parts.push(`<span class="meta">Pick #${player.draft.pick} • <span class="year-pill year-${player.draft.year}">${player.draft.year}</span></span>`);
